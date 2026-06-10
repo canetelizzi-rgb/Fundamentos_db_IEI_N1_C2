@@ -1,0 +1,1 @@
+ALTER TABLE clientes ADD CONSTRAINT fk_clientes_tipos_cliente FOREIGN KEY (id_tipo_cliente) REFERENCES tipos_cliente(id_tipo_cliente);
