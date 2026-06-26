@@ -68,10 +68,15 @@ CREATE TABLE IF NOT EXISTS tipos_producto(
     CONSTRAINT pk_tipos_producto PRIMARY KEY (id)
 );
 
+
 CREATE TABLE IF NOT EXISTS productos(
-    id INTEGER NOT NULL AUTO_INCREMENT,
+    id_producto INTEGER NOT NULL AUTO_INCREMENT,
+    sku_produto VARCHAR(12) NOT NULL,
     nombre_producto VARCHAR(255) NOT NULL,
-    id_tipo_producto INTEGER NOT NULL;
+    id_tipo_producto INTEGER NOT NULL,
+    descripcion VARCHAR(255) NULL,
+    precio DECIMAL NOT NULL,
+    fecha_caducidad DATE NULL,
 
     CONSTRAINT pk_productos PRIMARY KEY (id_producto),
     CONSTRAINT fk_productos_tipos_producto FOREIGN KEY (id_tipo_producto) REFERENCES tipos_producto(id_tipo_producto)
